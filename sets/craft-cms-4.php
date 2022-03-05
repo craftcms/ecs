@@ -10,9 +10,8 @@ return static function(ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(__DIR__ . '/craft-cms-3.php');
 
     $services = $containerConfigurator->services();
-    $services->set(TrailingCommaInMultilineFixer::class)->call('configure', [[
+    $services->get(TrailingCommaInMultilineFixer::class)->call('configure', [[
         'elements' => [
-            TrailingCommaInMultilineFixer::ELEMENTS_ARGUMENTS,
             TrailingCommaInMultilineFixer::ELEMENTS_ARRAYS,
             TrailingCommaInMultilineFixer::ELEMENTS_PARAMETERS,
         ],
