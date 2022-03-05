@@ -37,6 +37,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PATHS, [
         __DIR__ . '/src',
+        __FILE__,
     ]);
 
     $containerConfigurator->import(SetList::CRAFT_CMS_4); // for Craft 3 projects
