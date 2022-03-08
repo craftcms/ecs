@@ -14,16 +14,16 @@ return static function(ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::PSR_12);
 
     $services = $containerConfigurator->services();
+    $services->remove(MethodArgumentSpaceFixer::class);
     $services->get(FunctionDeclarationFixer::class)->call('configure', [[
         'closure_function_spacing' => FunctionDeclarationFixer::SPACING_NONE,
+    ]]);
+    $services->get(VisibilityRequiredFixer::class)->call('configure', [[
+        'elements' => ['method', 'property'],
     ]]);
     $services->set(TrailingCommaInMultilineFixer::class)->call('configure', [[
         'elements' => [
             TrailingCommaInMultilineFixer::ELEMENTS_ARRAYS,
         ],
     ]]);
-    $services->get(VisibilityRequiredFixer::class)->call('configure', [[
-        'elements' => ['method', 'property'],
-    ]]);
-    $services->remove(MethodArgumentSpaceFixer::class);
 };
