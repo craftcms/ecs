@@ -7,6 +7,7 @@ use PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer;
 use PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer;
 use PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer;
 use PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer;
+use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
@@ -26,4 +27,5 @@ return static function(ContainerConfigurator $containerConfigurator): void {
             TrailingCommaInMultilineFixer::ELEMENTS_ARRAYS,
         ],
     ]]);
+    $services->set(NoUnusedImportsFixer::class);
 };
