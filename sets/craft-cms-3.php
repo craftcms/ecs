@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use craft\ecs\fixers\ElseIfFixer;
 use PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer;
 use PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer;
 use PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer;
