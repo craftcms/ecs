@@ -1,6 +1,6 @@
 # Easy Coding Standard config for Craft CMs
 
-This package provides [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) configurations for Craft CMS projects.
+This package provides [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) configurations for Craft CMS plugins and projects.
 
 In general, we follow the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding style guide, with a couple alterations:
 
@@ -8,7 +8,7 @@ In general, we follow the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding s
 - Spaces after the `function` keyword aren’t enforced. ([¶7](https://www.php-fig.org/psr/psr-12/#7-closures))
 - Visibility is not enforced for constants, for Craft 3 projects.
 
-To install, run the following commands:
+To install, run the following commands within your plugin or project:
 
 ```sh
 composer config minimum-stability dev
@@ -22,7 +22,7 @@ composer config prefer-stable true
 composer require craftcms/ecs:dev-main --dev
 ```
 
-Then add an `ecs.php` file to the root of your project:
+Then add an `ecs.php` file to the root of your plugin or project:
 
 ```php
 <?php
@@ -47,9 +47,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 ```
 
 Adjust the `PATHS` value to include all source/test code locations, and remove the appropriate `SetList` option,
-depending on whether this is for a Craft 3 project, or Craft 4 project.
+depending on whether this is for Craft 3 or Craft 4.
 
-With that in place, you can check your project’s code with the following command:
+With that in place, you can check your plugin/project’s code with the following command:
 
 ```sh
 vendor/bin/ecs check
