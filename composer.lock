@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bb0df421b807900e811da42d7a55eca",
+    "content-hash": "f08b687b1ae0c6af5a0860c35e9d7585",
     "packages": [
         {
             "name": "symplify/easy-coding-standard",
