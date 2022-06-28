@@ -30,19 +30,17 @@ Then add an `ecs.php` file to the root of your plugin or project:
 declare(strict_types=1);
 
 use craft\ecs\SetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\ValueObject\Option;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::PARALLEL, true);
-    $parameters->set(Option::PATHS, [
+return static function(ECSConfig $ecsConfig): void {
+    $ecsConfig->parallel();
+    $ecsConfig->paths([
         __DIR__ . '/src',
         __FILE__,
     ]);
 
-    $containerConfigurator->import(SetList::CRAFT_CMS_3); // for Craft 3 projects
-    $containerConfigurator->import(SetList::CRAFT_CMS_4); // for Craft 4 projects
+    $ecsConfig->sets([SetList::CRAFT_CMS_3]); // for Craft 3 projects
+    $ecsConfig->sets([SetList::CRAFT_CMS_4]); // for Craft 4 projects
 };
 ```
 
