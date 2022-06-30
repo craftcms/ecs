@@ -7,24 +7,25 @@ use PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer;
 use PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer;
 use PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer;
 use PhpCsFixer\Fixer\Import\NoUnusedImportsFixer;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return static function(ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(SetList::PSR_12);
+return static function(ECSConfig $ecsConfig): void {
+    $ecsConfig->import(SetList::PSR_12);
 
-    $services = $containerConfigurator->services();
+    $services = $ecsConfig->services();
     $services->remove(MethodArgumentSpaceFixer::class);
-    $services->get(FunctionDeclarationFixer::class)->call('configure', [[
+
+    $ecsConfig->ruleWithConfiguration(FunctionDeclarationFixer::class, [
         'closure_function_spacing' => FunctionDeclarationFixer::SPACING_NONE,
-    ]]);
-    $services->get(VisibilityRequiredFixer::class)->call('configure', [[
+    ]);
+    $ecsConfig->ruleWithConfiguration(VisibilityRequiredFixer::class, [
         'elements' => ['method', 'property'],
-    ]]);
-    $services->set(TrailingCommaInMultilineFixer::class)->call('configure', [[
+    ]);
+    $ecsConfig->ruleWithConfiguration(TrailingCommaInMultilineFixer::class, [
         'elements' => [
             TrailingCommaInMultilineFixer::ELEMENTS_ARRAYS,
         ],
-    ]]);
-    $services->set(NoUnusedImportsFixer::class);
+    ]);
+    $ecsConfig->rule(NoUnusedImportsFixer::class);
 };
