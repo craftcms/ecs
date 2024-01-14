@@ -1,17 +1,17 @@
 {
-    "name": "craftcms/ecs",
-    "description": "Easy Coding Standard configurations for Craft CMS projects",
-    "require": {
-        "php": "^7.2.5|^8.0.2",
-        "symplify/easy-coding-standard": "^10.3.3"
-    },
-    "autoload": {
-        "psr-4": {
-            "craft\\ecs\\": "src"
-        }
-    },
-    "scripts": {
-        "check-cs": "ecs check --ansi",
-        "fix-cs": "ecs check --ansi --fix"
+  "name": "craftcms/ecs",
+  "description": "Easy Coding Standard configurations for Craft CMS projects",
+  "require": {
+    "php": "^7.2.5|^8",
+    "symplify/easy-coding-standard": "^10.3.3|^12.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "craft\\ecs\\": "src"
     }
+  },
+  "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix"
+  }
 }
