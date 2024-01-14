@@ -13,8 +13,10 @@ use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 return static function(ECSConfig $ecsConfig): void {
     $ecsConfig->import(SetList::PSR_12);
 
-    $services = $ecsConfig->services();
-    $services->remove(MethodArgumentSpaceFixer::class);
+    if (method_exists($ecsConfig, 'services')) {
+        $services = $ecsConfig->services();
+        $services->remove(MethodArgumentSpaceFixer::class);
+    }
 
     $ecsConfig->ruleWithConfiguration(FunctionDeclarationFixer::class, [
         'closure_function_spacing' => FunctionDeclarationFixer::SPACING_NONE,
