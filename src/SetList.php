@@ -8,4 +8,5 @@ final class SetList
 {
     public const CRAFT_CMS_3 = __DIR__ . '/../sets/craft-cms-3.php';
     public const CRAFT_CMS_4 = __DIR__ . '/../sets/craft-cms-4.php';
+    public const CRAFT_CMS_5 = __DIR__ . '/../sets/craft-cms-5.php';
 }
