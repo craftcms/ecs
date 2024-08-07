@@ -1,4 +1,4 @@
-# Easy Coding Standard config for Craft CMs
+# Easy Coding Standard config for Craft CMS
 
 This package provides [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) configurations for Craft CMS plugins and projects.
 
