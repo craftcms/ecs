@@ -41,11 +41,12 @@ return static function(ECSConfig $ecsConfig): void {
 
     $ecsConfig->sets([SetList::CRAFT_CMS_3]); // for Craft 3 projects
     $ecsConfig->sets([SetList::CRAFT_CMS_4]); // for Craft 4 projects
+    $ecsConfig->sets([SetList::CRAFT_CMS_5]); // for Craft 5 projects
 };
 ```
 
 Adjust the `PATHS` value to include all source/test code locations, and remove the appropriate `SetList` option,
-depending on whether this is for Craft 3 or Craft 4.
+depending on whether this is for Craft 3, Craft 4, or Craft CMS 5.
 
 With that in place, you can check your plugin/project’s code with the following command:
 
