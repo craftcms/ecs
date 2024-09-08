@@ -4,38 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f08b687b1ae0c6af5a0860c35e9d7585",
+    "content-hash": "4ee35a3d89faf13aac5e00f5f69a5f85",
     "packages": [
         {
             "name": "symplify/easy-coding-standard",
-            "version": "10.3.3",
+            "version": "12.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "c93878b3c052321231519b6540e227380f90be17"
+                "url": "https://github.com/easy-coding-standard/easy-coding-standard.git",
+                "reference": "22bf2e05921de7f3092fc4036a12bdd6f18f68b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/c93878b3c052321231519b6540e227380f90be17",
-                "reference": "c93878b3c052321231519b6540e227380f90be17",
+                "url": "https://api.github.com/repos/easy-coding-standard/easy-coding-standard/zipball/22bf2e05921de7f3092fc4036a12bdd6f18f68b2",
+                "reference": "22bf2e05921de7f3092fc4036a12bdd6f18f68b2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2"
             },
             "conflict": {
-                "friendsofphp/php-cs-fixer": "<3.0",
-                "squizlabs/php_codesniffer": "<3.6"
+                "friendsofphp/php-cs-fixer": "<3.46",
+                "phpcsstandards/php_codesniffer": "<3.8",
+                "symplify/coding-standard": "<12.1"
             },
             "bin": [
                 "bin/ecs"
             ],
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "10.3-dev"
-                }
-            },
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -45,9 +41,16 @@
             "license": [
                 "MIT"
             ],
-            "description": "Prefixed scoped version of ECS package",
+            "description": "Use Coding Standard with 0-knowledge of PHP-CS-Fixer and PHP_CodeSniffer",
+            "keywords": [
+                "Code style",
+                "automation",
+                "fixer",
+                "static analysis"
+            ],
             "support": {
-                "source": "https://github.com/symplify/easy-coding-standard/tree/10.3.3"
+                "issues": "https://github.com/easy-coding-standard/easy-coding-standard/issues",
+                "source": "https://github.com/easy-coding-standard/easy-coding-standard/tree/12.1.4"
             },
             "funding": [
                 {
@@ -59,7 +62,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-13T14:03:37+00:00"
+            "time": "2024-01-14T08:46:54+00:00"
         }
     ],
     "packages-dev": [],
@@ -69,8 +72,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2.5|^8.0.2"
+        "php": "^7.2.5|^8"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.6.0"
 }
